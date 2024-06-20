@@ -1,0 +1,25 @@
+<%- include('partials/header')%>
+<main class="w-full min-h-96 flex gap-x-10 justify-center my-3 ">
+    <% if(product) { %>
+        <div class="left w-[30vw] h-[65vh] bg-zinc-100 p-5 rounded-md">
+            <img class="h-full w-full object-cover" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="">
+        </div>
+        <div class="right w-[45vw] min-h-[75vh] bg-zinc-100 p-10 rounded-md">
+            <h1 class="text-2xl mt-5 font-bold text-zinc-700 "><%= product.productname %></h1>
+            <hr class="font-bold">
+            <div class="mt-3 flex justify-between item-center ">
+                <h3 class="font-bold text-xl text-green-500"><%= product.discount %>%</h3>
+                <h3 class="text-blue-600 font-bold text-xl"><i class="fa-solid fa-indian-rupee-sign"></i><%= product.price %></h3>
+            </div>
+            <div class="buy flex justify-between item-center mt-5">
+                <form action="/users/cart" method="post" >
+                    <input type="hidden" value="<%= product._id %>">
+                    <input class="rounded-md px-3 py-2 bg-orange-500 font-bold text-white" type="submit" value="addToCart">
+                </form>
+                <input class="rounded-md px-3 py-2 bg-orange-500 font-bold text-white" type="submit" value="Buynow">
+            </div>
+        </div>
+        
+    <% } %>
+</main>
+<%- include('partials/footer')%>

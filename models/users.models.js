@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const userSchema = mongoose.Schema({
-    fullName: {
+    fullname: {
         type: String,
         required: true,
         unique: true,
@@ -13,7 +13,7 @@ const userSchema = mongoose.Schema({
         required: true,
         unique: true,
     },
-    paassword: {
+    password: {
         type: String,
         required: true,
     },
@@ -21,24 +21,15 @@ const userSchema = mongoose.Schema({
         type: Number,
         required: true,
     },
-    picture: {
-        type: String,
-    },
-    cart: [
+    carts:
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Cart",
+            type: String,
         }
-    ],
-    orders: [
-        {
-            types: mongoose.Schema.Types.ObjectId,
-            ref: "Order",
-        }
-    ],
-    isadmin: {
-        type: Boolean,
-    }
+    ,
+    Orders: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Order",
+    }]
 });
 
 

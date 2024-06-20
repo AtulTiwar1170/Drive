@@ -1,0 +1,22 @@
+<%- include('partials/header')%>
+
+<main class="h-[75vh] w-full flex justify-center item-center">
+    <div class="box w-80 h-96 p-5 ">
+        <h1 class="font-bold text-5xl tracking-tighter">Wellcome to <span class="font-bold text-5xl text-zinc-400 ml-12">.DRIVE</span></h1>
+        <form action="/users/register" method="post">
+            
+            <input class="px-3 py-2 ouline-none border-b-2 border-zinc-600 w-full mt-5" type="text" placeholder="Fullname" name="fullname" required>
+            <input class="px-3 py-2 ouline-none border-b-2 border-zinc-600 w-full mt-5" type="email" placeholder="E-Mail" name="email" required>
+            <input class="px-3 py-2 ouline-none border-b-2 border-zinc-600 w-full mt-5" type="Number" placeholder="Contact" name="contact" required>
+            <input class="px-3 py-2 ouline-none border-b-2 border-zinc-600 w-full mt-5" type="password" placeholder="Password" name="password" required>
+            <input class="px-5 py-2 bg-black font-bold w-full text-white text-xl mt-5" type="submit" value="Submit">
+            <p class="mt-5">If you have an Account? <a class="text-blue-500" href="/login">Login</a> here.</p>
+        </form>
+    </div>
+    
+</main>
+<footer class="flex justify-between item-center border-t-[1px] border-zinc-900 bottom-0 px-5 py-3 w-full ">
+    <div class="footitem">Term/Conditions</div>
+    <div class="footitem">Everything mentain by .Drive</div>
+    <div class="footitem">Contact: 1234567890</div>
+</footer>

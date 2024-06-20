@@ -1,0 +1,41 @@
+<%- include('partials/header')%>
+
+<main class="w-full min-h-96 flex gap-x-10 justify-center my-3">
+    <% if(user) { %>
+        <div class="left w-80 h-[75vh] bg-zinc-200 p-3">
+            <div class="profile-photo h-60 w-full bg-zinc-100"></div>
+            
+            <a class="px-28 py-2 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl w-full inline-block rounded-md mt-48" href="/users/logout">logout</a>
+            
+        </div>
+        <div class="right w-1/2 min-h-[75vh] bg-zinc-200 p-3">
+            <div class="inside h-48 w-full bg-zinc-100 p-5">
+                <div class="flex justify-between item-center w-full">
+                    <h3 class="text-xl text-zinc-700 font-bold"><%= user.fullname %></h3>
+                    <a class="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl  rounded-md " href="/users/edit">Edit</a>
+                </div>
+                <div class="flex justify-between item-center mt-3 font-bold">
+                    <h3 class="text-xl text-blue-500 "><%= user.email %></h3>
+                    <h3 class="text-xl text-blue-500  "><%= user.contact %></h3>
+                </div>
+                <div class="flex justify-between item-center mt-10">
+                    <a class="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl  rounded-md " href="/owners/orders">orders</a>
+                    <a class="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl  rounded-md " href="/owners/adminPanel">Manage Product</a>
+                    <a class="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl  rounded-md " href="/owners/admin">Create New Product</a>
+                </div>
+            </div>
+            <div class="inside min-h-[40vh] w-full bg-zinc-100 mt-5 p-3">
+                <div class="orders h-10 w-full bg-zinc-300 mb-2"></div>
+                <div class="orders h-10 w-full bg-zinc-300 mb-2"></div>
+                <div class="orders h-10 w-full bg-zinc-300 mb-2"></div>
+                <div class="orders h-10 w-full bg-zinc-300 mb-2"></div>
+            </div>
+        </div>
+    <% } %>
+</main>
+
+<footer class="flex justify-between item-center border-t-[1px] border-zinc-900 bottom-0 px-5 py-3 w-full ">
+    <div class="footitem">Term/Conditions</div>
+    <div class="footitem">Everything mentain by .Drive</div>
+    <div class="footitem">Contact: 1234567890</div>
+</footer>

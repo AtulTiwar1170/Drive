@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
-const { title } = require("process");
+
 
 const productSchema = mongoose.Schema({
-    image: {
+    productname: {
         type: String,
         required: true,
     },
-    title: {
-        type: String,
+    image: {
+        type: Buffer,
         required: true,
     },
     price: {

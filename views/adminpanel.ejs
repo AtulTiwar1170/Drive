@@ -1,0 +1,27 @@
+<%- include('partials/header')%>
+<main>
+    <div class="box flex gap-x-10">
+        <h1 class="text-4xl text-zinc-700 mt-10 font-bold">Admin Panel</h1>
+    <a class="px-3 py-2 bg-blue-500 rounded-md text-white font-ybold mt-10 inline-block" href="/owners/admin">Create New Product</a>
+    </div>
+    <div class="mt-10 flex  item-center gap-x-4 min-h-96  w-full mt-5  flex-wrap">
+        <% products.forEach(function(product) { %>
+            <div class="inline-block h-96 w-[19%] bg-zinc-200 mb-5" >
+                <div class="item w-full h-80 bg-red-300">
+                    <img class="w-full h-full object-cover" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="">
+                </div>
+                <div class="flex py-2 px-3 justify-between">
+                    <div class="flex-col">
+                        <h3 class="font-bold text-xl tracking-tighter w-58 h-7  overflow-hidden"><%= product.productname %>..</h3>
+                        <h4 class="text-blue-600 font-semibold "><i class="fa-solid fa-indian-rupee-sign"></i><%= product.price %></h4>
+                    </div>
+                    <div class="flex-col">
+                        <h3 class="text-green-700 text-xl font-bold "><%= product.discount %>%</h3>
+                        <a href="/owners/delete/<%= product._id %>"><h4 class="text-black font-semibold " ><i class="fa-solid fa-trash"></i></h4></a>
+                    </div>
+                </div>
+            </div>
+        <% })%>
+    </div>
+</main>
+<%- include('partials/footer')%>

@@ -1,0 +1,22 @@
+<%- include('partials/header')%>
+
+<main class="flex justify-center item-center h-[76vh]">
+    <div class="main mt-10">
+        <h1 class="text-2xl font-bold text-zinc-400">Create New Product.</h1>
+        <h4 class="text-xl font-semibold text-zinc-400 mt-5">Product image.</h4>
+        <form class="mb-5 mt-2" action="/products/create" method="post" enctype="multipart/form-data">
+            <input type="file" class="px-3 py-2 rounded" accept="image/*" name="image" value="Select file">
+            <div class="data w-[70vw] flex justify-between item-center flex-wrap gap-x-2 mt-5">
+                <input class="w-[34vw] px-3 py-2 border-[1px] border-zinc-200 rounded-sm mt-2" type="text" placeholder="Product name" name="productname" required>
+                <input class="w-[34vw] px-3 py-2 border-[1px] border-zinc-200 rounded-sm mt-2" type="number" placeholder="Product price" name="price" required>
+                <input class="w-[34vw] px-3 py-2 border-[1px] border-zinc-200 rounded-sm mt-2" type="number" placeholder="Product discount" name="discount" required>
+                <input class="w-[34vw] px-3 py-2 border-[1px] border-zinc-200 rounded-sm mt-2 text-white font-bold text-xl bg-blue-500" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</main>
+<footer class="flex justify-between item-center border-t-[1px] border-zinc-900 bottom-0 px-5 py-3 w-full ">
+    <div class="footitem">Term/Conditions</div>
+    <div class="footitem">Everything mentain by .Drive</div>
+    <div class="footitem">Contact: 1234567890</div>
+</footer>
