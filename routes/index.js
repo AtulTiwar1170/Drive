@@ -14,7 +14,7 @@ router.get("/shop", islogedin, async function (req, res) {
 })
 router.get("/shop/:id", islogedin, async function (req, res) {
     let product = await productModel.findOne({ _id: req.params.id })
-    res.render("buyit", { product });
+    res.render("buyit", { product});
 });
 
 router.get("/login", function (req, res) {

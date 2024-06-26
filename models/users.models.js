@@ -21,11 +21,13 @@ const userSchema = mongoose.Schema({
         type: Number,
         required: true,
     },
-    carts:
+    carts: [
         {
-            type: String,
-        }
-    ,
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Product",
+            unique: true,
+        },
+    ],
     Orders: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Order",
