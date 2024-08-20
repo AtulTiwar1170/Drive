@@ -1,8 +1,9 @@
 <%- include('partials/header')%>
 <main>
-    <div class="box flex gap-x-10">
-        <h1 class="text-4xl text-zinc-700 mt-10 font-bold">Admin Panel</h1>
-    <a class="px-3 py-2 bg-blue-500 rounded-md text-white font-ybold mt-10 inline-block" href="/owners/admin">Create New Product</a>
+    <div class="box flex gap-x-10 border-b-[1px] border-zinc-500 py-5">
+        <h1 class="text-4xl text-zinc-700  font-bold">Admin Panel</h1>
+    <a class="px-3 py-2 bg-zinc-500 rounded-md text-white font-bold  inline-block" href="/owners/admin">Create New Product</a>
+    <a class="px-3 py-2 bg-zinc-500 rounded-md text-white font-bold  inline-block" href="/owners/orders">orders</a>
     </div>
     <div class="mt-10 flex  item-center gap-x-4 min-h-96  w-full mt-5  flex-wrap">
         <% products.forEach(function(product) { %>

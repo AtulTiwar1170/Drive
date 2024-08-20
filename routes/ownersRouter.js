@@ -1,34 +1,39 @@
 const express = require("express");
-
 const router = express.Router();
 const ownerModel = require("../models/owners.model");
 const productModel = require("../models/products.models");
+const {ownerlogin} = require("../controllers/ownerAuthControler.js");
 
 
 if(process.env.NODE_ENV === "development") {
-    router.post("/create", async function (req, res) {
-        let owners = await ownerModel.find();
-        if (owners.length > 0) {
-            return res.status(500).send("you don't have permision to create a new owner.");
-        }
-        
-        let {fullname, email, password, contact} = req.body;
-
-        let createdOwner = await ownerModel.create({
-            fullname,
-            email,
-            password,
-            contact,
-        });
-        res.status(201).send(createdOwner);
-    })
+    router.post("/create", ownerlogin)
 }
+router.get("/ownerlogin", function (req, res) {
+    res.render("ownerlogin");
+});
+router.post("/ownerlogin", async function (req, res) {
+    const { email, password } = req.body;
+    const user = await ownerModel.findOne({ email: email});
+    if(!user) return res.render('access')
+    else {
+        bcrypt.compare(user.password, password, (err, result) => {
+            if(result) {
+
+                res.redirect('/owners/owner-access/adminpanel');
+            }
+            else {
+                res.redirect('/owners/access');
+            }
+        }
+    )
+    }
+
+});
 
 router.get("/admin", function (req, res) {
-    // let success = req.flash("success");
     res.render("createproduct");
 });
-router.get("/adminpanel", async function (req, res) {
+router.get("/owner-access/adminpanel", async function (req, res) {
     let products = await productModel.find();
     res.render("adminpanel", { products });
 });

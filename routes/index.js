@@ -24,5 +24,11 @@ router.get("/login", function (req, res) {
 router.get("/register", function (req, res) {
     res.render("register");
 });
+router.get("/access", function (req, res) {
+    res.render("access");
+});
+
+
+
 
 module.exports = router;

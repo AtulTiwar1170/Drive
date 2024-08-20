@@ -11,10 +11,10 @@ const ownerSchema = mongoose.Schema({
         unique: true,
         lowercase: true,
     },
-    contact: {
-        type: Number,
+    password:{
+        type: String,
         required: true,
-    },
+    }
 
 
 
