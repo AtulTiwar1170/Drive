@@ -24,11 +24,9 @@ module.exports.registerUser = async function (req, res) {
                     password: hash,
                     contact,
                 });
-                // let token = jwt.sign({email: user.email, id: user._id}, "heyheyhey");
-
                 let token = generateToken(user);
                 res.cookie("token", token);
-                res.redirect("/users/profile")
+                res.redirect("/users/profile")  
             }
         });
     });
